@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+        .parent{
+            width: 300px;
+            height: 500px;
+            background-color: gray;
+            border-radius: 20px;
+            border: 5px solid black;
+            border-right: 10px solid black;
+            border-bottom: 10px solid black;
+            text-align: center;
+        }
+        .input{
+            width: 260px;
+            height: 40px;
+            background-color: black;
+            position: relative;
+            top: 20px;
+            left: 20px;
+            border-radius:5px;
+        }
+        #inp{
+            width: 95%;
+            height: 80%;
+            background-color:beige;
+            font-size: 20px;
+            text-align: right;
+            border-radius: 5px;
+        }
+        .buttons{
+            position: relative;
+            top: 20px;
+        }
+        .b1{
+            width: 40px;
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 15px;
+            margin: 3.5px;
+            font-weight: bold;
+        }
+        .btn{
+            background-color: black;
+            color: white;
+        }
+        .red{
+            background-color: red;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>SCINTIFIC CALCULATOR</h1>
+    <div class="parent">
+        <div class="input">
+            <input type="text" placeholder="0"   id="inp">
+        </div>
+        <div class="buttons">
+            <p>
+                <input type="button" value="sin" class="b1 btn" onclick="sin1()">
+                <input type="button" value="cos" class="b1 btn" onclick="cos1()">
+                <input type="button" value="tan" class="b1 btn" onclick="tan1()">
+                <input type="button" value="asin" class="b1 btn">
+                <input type="button" value="acos" class="b1 btn">
+            </p>
+            <p>
+                <input type="button" value="atan" class="b1 btn">
+                <input type="button" value="₶" class="b1 btn" onclick="cal1(22/7)">
+                <input type="button" value="log" class="b1 btn">
+                <input type="button" value="ln" class="b1 btn">
+                <input type="button" value="%" class="b1 btn" onclick="cal1()">
+            </p>
+            <p>
+                <input type="button" value="x2" class="b1 btn">
+                <input type="button" value="x3" class="b1 btn">
+                <input type="button" value="√" class="b1 btn">
+                <input type="button" value="(" class="b1 btn" onclick="cal1('(')">
+                <input type="button" value=")" class="b1 btn" onclick="cal1(')')">
+            </p>
+            <p style="margin-top: 40px;">
+                <input type="button" value="7" class="b1" onclick="cal1('7')">
+                <input type="button" value="8" class="b1" onclick="cal1('8')">
+                <input type="button" value="9" class="b1" onclick="cal1('9')">
+                <input type="button" value="Del" class="b1 red" onclick="delete1()">
+                <input type="button" value="C" class="b1 red" onclick="clear1()">
+            </p>
+            <p>
+                <input type="button" value="4" class="b1" onclick="cal1('4')">
+                <input type="button" value="5" class="b1" onclick="cal1('5')">
+                <input type="button" value="6" class="b1" onclick="cal1('6')">
+                <input type="button" value="X" class="b1" onclick="cal1('*')">
+                <input type="button" value="/" class="b1" onclick="cal1('/')">
+            </p>
+            <p>
+                <input type="button" value="1" class="b1" onclick="cal1('1')">
+                <input type="button" value="2" class="b1" onclick="cal1('2')">
+                <input type="button" value="3" class="b1" onclick="cal1('3')">
+                <input type="button" value="+" class="b1" onclick="cal1('+')">
+                <input type="button" value="-" class="b1" onclick="cal1('-')">
+            </p>
+            <p>
+                <input type="button" value="0" class="b1" onclick="cal1('0')">
+                <input type="button" value="±" class="b1">
+                <input type="button" value="." class="b1" onclick="cal1()">
+                <input type="button" value="Exp" class="b1">
+                <input type="button" value="=" class="b1" onclick="evaluate1()">
+            </p>
+        </div>
+    </div>
+
+
+    <script>
+        let inp1=document.getElementById("inp")
+        function cal1(data)
+        {
+            inp1.value+=data
+
+        }
+        function evaluate1()
+        {
+            inp1.value=eval(inp1.value)
+        }
+        function delete1()
+        {
+            // inp1.value=inp1.value.substring(0,inp1.value.length-1)
+            inp1.value=inp1.value.slice(0,-1)
+        }
+        function clear1()
+        {
+            inp1.value=""
+        }
+        function sin1()
+        {
+            inp1.value=Math.sin(inp1.value*(Math.PI)/180)
+        }
+        function cos1()
+        {
+            inp1.value=Math.cos(inp1.value*(Math.PI)/180)
+        }
+        function tan1()
+        {
+            inp1.value=Math.tan(inp1.value*(Math.PI)/180)
+        }
+        function asin1()
+        {
+
+        }
+    </script>
+    
+</body>
+</html>
